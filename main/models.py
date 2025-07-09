@@ -17,6 +17,8 @@ class Category(models.Model):
         return self.name
     
 
+    
+
 class Size(models.Model):
     name = models.CharField(max_length=20)
 
