@@ -3,7 +3,6 @@ from django.contrib.auth.admin import UserAdmin
 from .models import CustomUser
 
 
-
 class CustomUserAdmin(UserAdmin):
     list_display = ('email', 'first_name', 'last_name', 'country')
     list_filter = ('country',)

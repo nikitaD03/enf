@@ -58,7 +58,7 @@ class CustomUserLoginForm(AuthenticationForm):
             self.user_cache = authenticate(self.request, email=email, password=password)
             if self.user_cache is None:
                 raise forms.ValidationError('Invalid email or password.')
-            elif not self.user_cache.is_active():
+            elif not self.user_cache.is_active:
                 raise forms.ValidationError('This account is inactive.')
         return self.cleaned_data
 
@@ -117,5 +117,3 @@ class CustomUserUpdateForm(forms.ModelForm):
             if cleaned_data.get(field):
                 cleaned_data[field] = strip_tags(cleaned_data[field])
         return cleaned_data
-    
-    
